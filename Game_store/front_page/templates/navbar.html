@@ -17,18 +17,29 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Support<span class="sr-only">(current)</span></a>
       </li>
-      {% if not request.user.is_authenticated %}
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign in</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign up</a>
-      </li>
-      {% else %}
-      <li class="nav-item">
-        <a class="nav-link " href="#">Log out</a>
-      </li>
-      {% endif %}
     </ul>
+    <div class="user_auth">
+      <a href="#" class="user_auth_button" id="sign_in">Sign in</a>
+      <a href="#" class="user_auth_button">Sign up</a>
+    </div>
   </div>
 </nav>
+
+<div class="popup_user_auth">
+  <div class="popup_sign_in">
+    <h4>Please login</h4>
+    <span>User name</span>
+    <input type="text">
+    <span>Password</span>
+    <input type="password">
+    <a href="#" class="button_auth">Sign in</a>
+  </div>
+</div>
+
+<script>
+
+  document.getElementById("sign_in").addEventListener("click", function(){
+    document.querySelector(".popup_user_auth").style.display = "flex";
+  })
+
+</script>
