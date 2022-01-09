@@ -25,7 +25,7 @@
   </div>
 </nav>
 
-<div class="popup_user_auth">
+<div class="popup_background" id="overlay">
   <div class="popup_sign_in">
     <h4>Please login</h4>
     <span>User name</span>
@@ -39,7 +39,11 @@
 <script>
 
   document.getElementById("sign_in").addEventListener("click", function(){
-    document.querySelector(".popup_user_auth").style.display = "flex";
+    document.querySelector(".popup_background").style.display = "flex";
+  })
+
+  document.getElementById("overlay").addEventListener("click", function(){
+    document.querySelector(".popup_background").style.display = "none";
   })
 
 </script>
