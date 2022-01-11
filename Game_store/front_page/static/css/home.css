@@ -47,7 +47,18 @@ body{
     align-items: center;
 }
 
-.popup_sign_in{
+.popup_background_register{
+    background: rgba(0 0 0 / 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_auth{
     height: 400px;
     width: 500px;
     background: #ececec;

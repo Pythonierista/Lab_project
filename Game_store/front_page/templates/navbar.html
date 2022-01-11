@@ -20,19 +20,30 @@
     </ul>
     <div class="user_auth">
       <a href="#" class="user_auth_button" id="sign_in">Sign in</a>
-      <a href="#" class="user_auth_button">Sign up</a>
+      <a href="#" class="user_auth_button" id="sign_up">Sign up</a>
     </div>
   </div>
 </nav>
 
 <div class="popup_background" id="overlay">
-  <div class="popup_sign_in">
+  <div class="popup_auth">
     <h4>Please login</h4>
     <span>User name</span>
     <input type="text">
     <span>Password</span>
     <input type="password">
     <a href="#" class="button_auth">Sign in</a>
+  </div>
+</div>
+
+<div class="popup_background_register" id="overlay2">
+  <div class="popup_auth">
+    <h4>Create your profile</h4>
+    <span>User name</span>
+    <input type="text">
+    <span>Password</span>
+    <input type="password">
+    <a href="#" class="button_auth">Sign up</a>
   </div>
 </div>
 
@@ -44,6 +55,14 @@
 
   document.getElementById("overlay").addEventListener("click", function(){
     document.querySelector(".popup_background").style.display = "none";
+  })
+
+    document.getElementById("sign_up").addEventListener("click", function(){
+    document.querySelector(".popup_background_register").style.display = "flex";
+  })
+
+  document.getElementById("overlay2").addEventListener("click", function(){
+    document.querySelector(".popup_background_register").style.display = "none";
   })
 
 </script>
