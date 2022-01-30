@@ -1,0 +1,64 @@
+<div class="popup_background" id="overlay"></div>
+
+<form method="POST" action="">
+  {% csrf_token %}
+<div class="popup_login">
+  <div class="popup_auth">
+    <h4>Please login</h4>
+    <span>User name</span>
+    <input type="text" name="username">
+    <span>Password</span>
+    <input type="password" name="password">
+    <div class="messages_class text-center">
+        {% for message in messages %}
+            <br>
+            <p id="messages">{{message}}</p>
+        {% endfor %}
+    </div>
+    <button class="btn button_auth" type="submit">Sign in</button>
+  </div>
+</div>
+
+<div class="popup_register">
+  <div class="popup_auth" id="popup_auth_register">
+    <h4>Create your profile</h4>
+      <span>First name</span>
+        {{form.first_name}}
+      <span>Last name</span>
+        {{form.last_name}}
+      <span>Username</span>
+        {{form.username}}
+      <span>Email</span>
+        {{form.email}}
+      <span>Password</span>
+        {{form.password1}}
+      <span>Repeat password</span>
+        {{form.password2}}
+      <button class="btn button_auth" type="submit" id="sign_up_btn">Sign up</button>
+  </div>
+</div>
+</form>
+
+<script>
+
+  document.getElementById("sign_in").addEventListener("click", function(){
+    document.querySelector(".popup_background").style.display = "flex";
+    document.querySelector(".popup_login").style.display = "block";
+  })
+
+  document.getElementById("overlay").addEventListener("click", function(){
+    document.querySelector(".popup_background").style.display = "none";
+    document.querySelector(".popup_login").style.display = "none";
+  })
+
+    document.getElementById("sign_up").addEventListener("click", function(){
+    document.querySelector(".popup_background").style.display = "flex";
+    document.querySelector(".popup_register").style.display = "block";
+  })
+
+  document.getElementById("overlay").addEventListener("click", function(){
+    document.querySelector(".popup_background").style.display = "none";
+    document.querySelector(".popup_register").style.display = "none";
+  })
+
+</script>

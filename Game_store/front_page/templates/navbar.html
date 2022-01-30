@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Game store</a>
+  <a class="logo" href="#">&#9055;</a>
+  <a class="navbar-brand" href="#"><b>Game store</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,51 +19,21 @@
         <a class="nav-link" href="#">Support<span class="sr-only">(current)</span></a>
       </li>
     </ul>
+    {% if not request.user.is_authenticated %}
     <div class="user_auth">
       <a href="#" class="user_auth_button" id="sign_in">Sign in</a>
       <a href="#" class="user_auth_button" id="sign_up">Sign up</a>
     </div>
+    {% else %}
+    <div class="user_auth">
+      <a href="{% url 'log_out' %}" class="user_auth_button">Sign out</a>
+    </div>
+    {% endif %}
   </div>
 </nav>
 
-<div class="popup_background" id="overlay">
-  <div class="popup_auth">
-    <h4>Please login</h4>
-    <span>User name</span>
-    <input type="text">
-    <span>Password</span>
-    <input type="password">
-    <a href="#" class="button_auth">Sign in</a>
-  </div>
-</div>
+{%  include 'user_auth.html' %}
 
-<div class="popup_background_register" id="overlay2">
-  <div class="popup_auth">
-    <h4>Create your profile</h4>
-    <span>User name</span>
-    <input type="text">
-    <span>Password</span>
-    <input type="password">
-    <a href="#" class="button_auth">Sign up</a>
-  </div>
-</div>
+{% block content %}
 
-<script>
-
-  document.getElementById("sign_in").addEventListener("click", function(){
-    document.querySelector(".popup_background").style.display = "flex";
-  })
-
-  document.getElementById("overlay").addEventListener("click", function(){
-    document.querySelector(".popup_background").style.display = "none";
-  })
-
-    document.getElementById("sign_up").addEventListener("click", function(){
-    document.querySelector(".popup_background_register").style.display = "flex";
-  })
-
-  document.getElementById("overlay2").addEventListener("click", function(){
-    document.querySelector(".popup_background_register").style.display = "none";
-  })
-
-</script>
+{% endblock %}

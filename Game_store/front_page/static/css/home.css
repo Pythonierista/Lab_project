@@ -10,7 +10,19 @@ body{
     width: 100%;
     max-width: 1015px;
     margin: 0 auto;
-    background-color: #343a40;
+    background-color: #1e1e1e;
+}
+
+.add_genre{
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 60px;
+    color: #fff;
+    line-height: 10px;
 }
 
 .navbar{
@@ -24,6 +36,13 @@ body{
     padding-bottom: 0.6125rem;
 }
 
+.navbar-nav{
+    padding: 0 40px;
+}
+.nav-item{
+    padding: 0 10px;
+    font-size: .9rem;
+}
 .user_auth{
     position: absolute;
     left: 85%
@@ -34,6 +53,7 @@ body{
     color: rgba(255,255,255,.5)!important;
     padding-right: 0.3rem;
     padding-left: 0.3rem;
+    font-size: .9rem;
 }
 
 .popup_background{
@@ -47,24 +67,36 @@ body{
     align-items: center;
 }
 
-.popup_background_register{
-    background: rgba(0 0 0 / 0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
 .popup_auth{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 400px;
     width: 500px;
     background: #ececec;
     padding: 40px;
     border-radius: 15px;
-    position: relative;
+}
+
+#popup_auth_register{
+    height: 590px;
+}
+
+.popup_login{
+    display: none;
+}
+
+.popup_register{
+    display: none;
+}
+
+.auth_text{
+    margin: 0 auto 20px;
+    display: block;
+    width: 100%;
+    padding: 6px;
+    border: 0px;
 }
 
 input{
@@ -91,6 +123,11 @@ h4{
     position: absolute;
     top: 70%;
     left: 35%;
+    border-width: 0px;
+}
+
+#sign_up_btn{
+    top: 89%;
 }
 
 span{
